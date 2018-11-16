@@ -593,7 +593,8 @@ platform_check_image() {
 		tplink_pharos_check_image "$1" "01000000" "$(tplink_pharos_v2_get_model_string)" '\0\xff\r' && return 0
 		return 1
 		;;
-	cpe510)
+	cpe510|\
+	cpe510-v3)
 		local modelstr="$(tplink_pharos_v2_get_model_string)"
 		tplink_pharos_board_detect $modelstr
 		case $AR71XX_MODEL in

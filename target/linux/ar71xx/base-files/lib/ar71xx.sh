@@ -594,6 +594,10 @@ ar71xx_board_detect() {
 			;;
 		esac
 		;;
+	*"CPE510 v3")
+		name="cpe510-v3"
+		tplink_pharos_board_detect "$(tplink_pharos_v2_get_model_string)"
+		;;
 	*"CPE830")
 		name="cpe830"
 		;;

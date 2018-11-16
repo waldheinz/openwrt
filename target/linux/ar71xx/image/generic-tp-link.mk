@@ -177,6 +177,19 @@ define Device/cpe510-520-v1
 endef
 TARGET_DEVICES += cpe510-520-v1
 
+define Device/cpe510-v3
+  $(Device/tplink-safeloader)
+  DEVICE_TITLE := TP-LINK CPE510 v3
+  BOARDNAME := CPE510V3
+  TPLINK_BOARD_ID := CPE510V3
+  TPLINK_HWID := 0x0
+  TPLINK_HWREV := 0
+  MTDPARTS := spi0.0:128k(u-boot)ro,64k(partition-table)ro,64k(product-info)ro,1792k(kernel),5888k(rootfs),192k(config)ro,64k(ART)ro,7680k@0x40000(firmware)
+  IMAGE_SIZE := 7680k
+  DEVICE_PACKAGES := rssileds
+endef
+TARGET_DEVICES += cpe510-v3
+
 define Device/cpe210-220-v1
   $(Device/cpe510-520-v1)
   DEVICE_TITLE := TP-LINK CPE210/220 v1
